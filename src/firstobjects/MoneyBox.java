@@ -60,4 +60,31 @@ public class MoneyBox {
     public boolean isEnough(int present){
         return getSum()>= present;
     }
+
+    public int getCount1kc() {
+        return count1kc;
+    }
+
+    public int getCount2kc() {
+        return count2kc;
+    }
+    
+    public void withdraw(int kc, int dvakc){
+        if(kc > count1kc || dvakc > count2kc){
+            throw new IllegalArgumentException("Tolik korun nebo dvoukorun tam neni");
+        }
+        this.count1kc -= kc;
+        this.count2kc -= dvakc;
+    }
+    
+    public void withdraw(){
+        this.count1kc = 0;
+        this.count2kc = 0;
+    }
+    
+    public void transfer(MoneyBox x){ //mam 2 instance this = bob, x = alice
+        x.addPocetkc(this.count1kc, this.count2kc);
+        this.count1kc = 0;
+        this.count2kc = 0;
+    }
 }
