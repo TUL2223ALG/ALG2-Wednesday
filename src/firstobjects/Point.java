@@ -33,10 +33,14 @@ public class Point {
        //return Math.hypot(coord[0], coord[1]);
     }
     
+    public double distanceFrom(Point p){ //bod this, bod p
+        return Math.hypot(this.x - p.x, this.y - p.y);
+    }
+    
     @Override 
     //prekryti (override) metody predka
     public String toString(){
-        return String.format("x = %.2f, y = %.2f", x, y);
+        return String.format("x = %.2f: y = %.2f", x, y);
         //return String.format("x = %.2f, y = %.2f", coord[0], coord[1]);
     }
     
