@@ -67,7 +67,7 @@ public class MoneyBox {
     public int getPocetDvouKorun() {
         return pocetDvouKorun;
     }
-    
+    //ZMena
     
     
 }
