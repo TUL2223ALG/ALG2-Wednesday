@@ -1,13 +1,13 @@
 package week07_commandline;
 
 import java.io.File;
-import java.util.Arrays;
 
 public class CommandLine {
 
-    private File actualDir = new File(System.getProperty("user.dir"));
+    private File actualDir;
 
     public CommandLine() {
+        actualDir = new File(System.getProperty("user.dir"));
     }
 
     public String help(String command) {
@@ -43,29 +43,31 @@ public class CommandLine {
     public String dir() {
         return dir(actualDir);
     }
-    public String dir(String adresar){
-       File tempActualDir = new File(actualDir,adresar);
-       return dir(tempActualDir);
+
+    public String dir(String adresar) {
+        File tempActualDir = new File(actualDir, adresar);
+        return dir(tempActualDir);
     }
-    private String dir(File dir){
+    
+    //vrati podadresare a pak soubory v zadanem adresari bez skrytych souboru
+    private String dir(File dir) {
         File[] sub = dir.listFiles();
         String adresare = "";
         String soubory = "";
-        String skryte = "";
         for (int i = 0; i < sub.length; i++) {
-            if ('.' != sub[i].getName().charAt(0)) {
+            if (sub[i].getName().charAt(0) != '.') { //neni skryty soubor
                 if (sub[i].isDirectory()) {
-                    adresare = adresare + sub[i].getName() + "\n";
+                    adresare = adresare + sub[i].getName() + "\n"; //lepsi pres StringBuilder
                 } else {
                     soubory = soubory + sub[i].getName() + "\n";
                 }
             }
         }
-        return adresare + soubory;        
+        return adresare + soubory;
     }
 
     public String getActualDir() {
         return actualDir.getAbsolutePath();
     }
-    
+
 }

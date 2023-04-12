@@ -1,14 +1,13 @@
-package week01firstobjects;
+package week01_firstobjects;
 /**
  * Represents a point in 2D
- * @author 
  */
 public class Point {
-    //data - vlastnost, stavy, clenske promenne, attributes, fields
+    //data - vlastnosti, stavy, clenske promenne, attributes, fields
     private double x; //nemenne
     private double y;
     
-    //double[] coord = new double[2];
+    //double[] coord = new double[2]; //jiny zpusob implementace
     private double distance = 0; //vypocitana
     
     //konstruktor / vytvari objekt/instanci, inicializuje
@@ -22,7 +21,8 @@ public class Point {
     
     //pretizeny konstruktor overloaded
     public Point(){
-        
+       this.x = 0;
+       this.y = 0; 
     }
     
     //getter

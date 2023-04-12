@@ -1,4 +1,4 @@
-package week01firstobjects;
+package week01_firstobjects;
 
 public class MoneyBox {
     private String name;
@@ -34,8 +34,8 @@ public class MoneyBox {
     }
     
     public void pridejKoruny(int pridejJednokorun, int pridejDvoukorun){
-        if (pridejJednokorun < 0){
-            return;
+        if (pridejJednokorun < 0){ 
+            return; //Vhodnejsi by bylo pouzit vyjimky
         }
         if (pridejDvoukorun < 0){
             return;
@@ -50,11 +50,11 @@ public class MoneyBox {
     }
     
     public boolean jeDostPenezNa(int cenaDarku){
-            return getValue()>= cenaDarku;
+            return getValue() >= cenaDarku;
     }
     
     public void transfer(int jednoKoruny, int dvouKoruny, MoneyBox to){
-        //kontrola jestli this ma tolik penez
+        //pridat kontrolu, jestli this ma tolik penez
         this.pocetJednoKorun -= jednoKoruny;
         this.pocetDvouKorun -= dvouKoruny;
         to.pridejKoruny(jednoKoruny, dvouKoruny);
@@ -67,7 +67,4 @@ public class MoneyBox {
     public int getPocetDvouKorun() {
         return pocetDvouKorun;
     }
-    
-    
-    
 }

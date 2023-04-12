@@ -1,14 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package week02_moreobjects;
 
-package week02_objectin;
-
-/**
- *
- * @author 
- */
 public class Fraction {
     
     private int numerator;
@@ -19,10 +10,10 @@ public class Fraction {
         this.numerator = numerator;
         denominator = 1;
         
-        fractionText = Integer.toString(this.numerator);
+        setFractionText();
     }
     
-    public Fraction(int numerator,int denominator){
+    public Fraction(int numerator, int denominator){
         if(denominator == 0){
             throw new IllegalArgumentException("Jmenovatel nesmi byt 0");
         }
@@ -30,18 +21,23 @@ public class Fraction {
         this.numerator = numerator/gcd;
         this.denominator = denominator/gcd;
         
+        setFractionText();
+    }
+    
+    public Fraction(String fr){
+        String[] parts = fr.split("/");
+        this.numerator = Integer.parseInt(parts[0]);
+        if(parts.length == 2){
+            this.denominator = Integer.parseInt(parts[1]);
+        }
+        setFractionText();
+    }
+    
+    private void setFractionText(){
         if (this.denominator == 1){
             fractionText = Integer.toString(this.numerator);
         } else{
             fractionText = (Integer.toString(this.numerator)+"/"+Integer.toString(this.denominator));
-        }
-    }
-    
-    public Fraction(String fr){
-        String[] parts = fr.split(" |/");
-        this.numerator = Integer.parseInt(parts[0]);
-        if(parts.length == 2){
-            this.denominator = Integer.parseInt(parts[1]);
         }
     }
     

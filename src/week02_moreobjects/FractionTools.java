@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package week02_objectin;
+package week02_moreobjects;
 
-/**
- *
- * @author
- */
 public class FractionTools {
 
     public static int findGCD(int numerator, int denominator) {
@@ -22,6 +14,7 @@ public class FractionTools {
         }
         return gcd;
     }
+    
     public static Fraction sum(Fraction a, Fraction b){
         int denominator = a.getDenominator()*b.getDenominator();
         int numerator = a.getNumerator()*b.getDenominator()+b.getNumerator()*a.getDenominator();
@@ -43,7 +36,7 @@ public class FractionTools {
         return frac;
     }
     
-    public static Fraction devision(Fraction a, Fraction b){
+    public static Fraction division(Fraction a, Fraction b){
         int denominator = a.getDenominator()*b.getNumerator();
         int numerator = a.getNumerator()*b.getDenominator();
         Fraction frac = new Fraction(numerator, denominator);

@@ -1,4 +1,4 @@
-package week04_zavodnik;
+package week04_competition;
 
 public class ZavodnikTest {
     public static void main(String[] args) {
@@ -6,7 +6,6 @@ public class ZavodnikTest {
         michal.setStartingNumber(1);
         michal.setStartingTime(6, 20, 45);
         michal.setFinishTime(7, 50, 30);
-        michal.getTime();
-        System.out.println(michal);
+        System.out.println(michal.getTime());
     }
 }

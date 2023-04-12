@@ -1,6 +1,6 @@
 package week03_arrayobjects;
 
-import week01firstobjects.Point;
+import week01_firstobjects.Point;
 
 public class NShape {
     private Point[] points;

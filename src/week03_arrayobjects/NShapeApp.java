@@ -12,7 +12,7 @@ public class NShapeApp {
         int n = sc.nextInt();
         myShape = new NShape(n);
         loadPoints(n);
-        System.out.format("%.2f", myShape.calculatePerimeter());
+        System.out.format("%.2f%n", myShape.calculatePerimeter());
         System.out.println(myShape.getClosestToOrigin());
     }
     
