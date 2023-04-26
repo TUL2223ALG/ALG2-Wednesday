@@ -1,6 +1,6 @@
-package week08_competitionwithfiles;
+package week040708_competition;
 
-public class Runner {
+public class Zavodnik implements Comparable<Zavodnik>{
 
     private String name;
     private String surname;
@@ -17,7 +17,7 @@ public class Runner {
     private int fMinutes;
     private int fSeconds;
 
-    public Runner(String name, String surname) {
+    public Zavodnik(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
@@ -113,5 +113,10 @@ public class Runner {
         this.seconds = time;
         return timeInSeconds;
 
+    }
+
+    @Override
+    public int compareTo(Zavodnik o) {
+       return this.time - o.time;
     }
 }

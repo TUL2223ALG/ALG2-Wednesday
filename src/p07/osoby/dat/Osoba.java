@@ -35,7 +35,7 @@ public class Osoba implements Comparable<Osoba> {
             = new Comparator<Osoba>() {
         @Override
         public int compare(Osoba o1, Osoba o2) {
-            return (int) Math.signum(o1.getVyska() - o2.getVyska());
+            return (int) Math.signum(o1.getVyska() - o2.getVyska()); //Double.compare
         }
     };
     public final static Comparator<Osoba> COMP_DLE_IC
@@ -177,8 +177,10 @@ public class Osoba implements Comparable<Osoba> {
     }
 
     public static Osoba loadFromFile(Scanner scf) throws IOException {
-        Osoba os = new Osoba(scf.nextInt(), scf.next(), scf.next(), scf.nextDouble());
-        return os;
+        if(scf.hasNext()){
+            Osoba os = new Osoba(scf.nextInt(), scf.next(), scf.next(), scf.nextDouble());
+            return os;
+        } return null;
     }
 
 }

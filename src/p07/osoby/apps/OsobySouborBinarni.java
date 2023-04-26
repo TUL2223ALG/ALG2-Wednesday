@@ -1,16 +1,15 @@
-package alg2.p07.osoby.apps;
+package p07.osoby.apps;
 
 /*
  * Copyright (C) 2023 Jirina Kralovcova
  * This program is part of Java programing education. 
  * You can use it as you need to learn Java. 
  */
-import alg2.p07.osoby.dat.Osoba;
+import p07.osoby.dat.Osoba;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package week04_competition;
+package week040708_competition;
 
 public class ZavodnikTest {
     public static void main(String[] args) {
