@@ -1,3 +1,3 @@
-Alice,Mala,3,23
-Bob,Velky,1,65
-Cyril,Stredny,2,55
+Alice,Mala,3,23,z
+Bob,Velky,1,65,m
+Cyril,Stredny,2,55,m

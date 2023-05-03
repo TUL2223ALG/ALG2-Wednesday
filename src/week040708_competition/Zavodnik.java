@@ -1,5 +1,7 @@
 package week040708_competition;
 
+import java.time.LocalTime;
+
 public class Zavodnik implements Comparable<Zavodnik>{
 
     private String name;
@@ -16,12 +18,31 @@ public class Zavodnik implements Comparable<Zavodnik>{
     private int fHours;
     private int fMinutes;
     private int fSeconds;
+    private Gender gender;
+    private Category category;
+    private int yob = 1980; //for testing
+    private LocalTime startTime;
 
     public Zavodnik(String name, String surname) {
         this.name = name;
         this.surname = surname;
+        
     }
 
+    public void setGender(char gender){
+        if(gender == 'm'){
+            this.gender = Gender.MAN;
+        } else if (gender == 'z'){
+            this.gender = Gender.WOMAN;
+        } else {
+            throw new IllegalArgumentException("Nevalidni pohlavi." + gender + " " + this.name);
+        }
+    }
+    
+    public void setCategory(){
+       this.category = Category.getCategory(yob, gender);
+    }
+    
     public void setStartingNumber(int number) {
         this.number = number;
     }
@@ -92,6 +113,10 @@ public class Zavodnik implements Comparable<Zavodnik>{
 
     public int getfSeconds() {
         return fSeconds;
+    }
+    
+    public String getCategoryText(){
+        return category.name();
     }
 
     @Override

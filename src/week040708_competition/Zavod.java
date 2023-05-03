@@ -31,7 +31,8 @@ public class Zavod {
     private String toText() {
         StringBuilder sb = new StringBuilder();
         for (Zavodnik runner : runners) {
-            sb.append(runner.toString()).append("\n");
+            sb.append(runner.toString());
+            sb.append(runner.getCategoryText()).append("\n");
         }
         return sb.toString();
     }
@@ -81,11 +82,13 @@ public class Zavod {
         try ( BufferedReader br = new BufferedReader(new FileReader(registrationFile))) {
             String line, name, surname;
             int startTime, number;
+            char gender;
 
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split("[,;]");
                 name = parts[0];
                 surname = parts[1];
+                
                 try { //nekompletni osetreni validity dat
                     number = Integer.parseInt(parts[2]);
                 } catch (NumberFormatException e) {
@@ -93,11 +96,14 @@ public class Zavod {
                     error = true;
                 }
                 startTime = Integer.parseInt(parts[3]);
+                gender = parts[4].charAt(0);
 
                 Zavodnik z = new Zavodnik(name, surname);
+                z.setGender(gender);
                 z.setStartingNumber(number);
                 int[] time = TimeTools.secondToHMS(startTime);
                 z.setStartingTime(time[0], time[1], time[2]);
+                z.setCategory();
                 add(z);
             }
         }
